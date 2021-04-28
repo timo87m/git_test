@@ -1,4 +1,26 @@
-body{
-  background: black;
-color: yellow; 
+
+
+  
+ .d1{background:purple;
+    color:yellow;
+    font-size: 40px;
+    
+   }
+ .d2{background:blue;
+    color:orange}
+
+ .container {
+   font-size: 40px;
+   width: 100%;
+   background: black;
+   display: grid;
+
+   grid-template-columns: 22% auto ;
+
+a{
+   color:yellow;
+ 
+}
+
+
 }
