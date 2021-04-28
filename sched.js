@@ -55,6 +55,8 @@ function toAMPM(t){
 
     return [h,m,ampm];
     }
+
+
         
 
 
@@ -67,34 +69,26 @@ timeobj[i]=toAMPM(timekeep[i]) + "<br />";
 
 
 
+function to12(t){
+    var h, m ;
+    h=Math.floor(t);// get hours 
+    
+
+
+    m=Math.round((t-h)*60);// get min in dec
+    
+    
+
+    return [h,m];
+    }
+
+
 
 
 
 // below in dT i need to learn array splice like python
 document.getElementById("demo").innerHTML = 
+'difference in time: ' + to12 (dT) +"<br />"
++ 'time interval: ' + to12 (intervals) + "<br />"+ timeobj
 
-
-'difference in time: ' +toAMPM( dT)[0] +' : '+ toAMPM( dT)[1] +"<br />"
-+ 'time interval: ' +  toAMPM (intervals)[0] + ' : '+toAMPM (intervals)[1]+ "<br />"+ timeobj
-
-;
-    
-    
-   
-   
-   
-   
-   
-   var int=Dtime/(brks+1);// intervals based on splits
-   var intH=Math.floor(int);// get hour
-   var intM=Math.round(60*(int-intH));// get minutes
-   
-   
-     
-   // document.getElementById("demo").innerHTML = [ih,im, iampm, fh, fm, 
-   
-  // fampm, 'Time difference:  ',DH,DM,"Intervals: ",intH,intM];
-    // above code displays
-    //console.log( ih);
-   } 
- 
+;}
