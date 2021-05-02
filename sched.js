@@ -1,94 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="mystyle.css">
+<!--the above imports an external .css-->
+
+</head>
   
-     function myFunction() { 
-    // use of Number() convert to number
-    var ih = Number(document.getElementById("ih").value);
-    var im = Number(document.getElementById("im").value);
-    var iampm = (document.getElementById("iampm").value);
-    var fh = Number(document.getElementById("fh").value);
-    // Get the value of the input field with id="ih"
-    var fm = Number(document.getElementById("fm").value); 
-    var fampm = (document.getElementById("fampm").value);  
-    var brks = Number(document.getElementById("brks").value);
-    
-    
-        function to24(check){
-        if (check =='PM') {return 12;} else {return 0;} };
+<body>
+<!--comment-->
+
+
+<div class="container">
+<div class='d1'>
+ 
+<!-- -->
+<object  data="">scheduler.html</object>
+
+</div>  
+ 
+  
+  
+ <div class="d2">
+   <!--main  h1 and p...-->
+   <h1>Scheduler</h1>
+
+   <p>Input from start time to end time and how many times to break it 
+   
+   up. <br>FROM:   </p> 
+   
+   <! COMMENT>
+   
+   <input min=1 max= 12 type='number' id="ih" value=8>:</input>
+   <! created a num box  with id "ih">
+   
+   <input min=0 max= 60 type="number" id="im" value=00></input>
+   <! created a txt box  with id "ih">
+   
+   
+   <select name="iampm" id="iampm">
+     <option value="AM">AM</option>
+     <option value="PM">PM</option>
+   </select>
+   <! select AM or PM>
+   
+   <!- ------------ this is the final input>
+   <p>TO: <br></p>
+   <input min=1 max= 12 type="number" id="fh" value=10>:</input>
+   <! created a num box  with id "ih">
+   
+   <input min=0 max= 60 type="number" id="fm" value=30></input>
+   <! created a txt box  with id "ih">
+   
+   
+   <select name="fampm" id="fampm"  >
+     <option value="AM">AM</option>
+     <option value="PM" >PM</option>
         
-       // example to use above fun : 
-       //fh=fh+to24(fampm);
+   </select>
+   <!- select AM or PM>
+   <br>
+   <input min=1 max= 100 type="number" id="brks" value=1> < 
+   
+   Splits</input>
+   <!- >
+   
+   <button type="button" onclick="myFunction()">sub</button>
+   <!-- the above button actually just called a function but didn't save 
+   
+   id "var"-->
+   
+   <p id="demo"></p>
+   <! element with id "demo">
+   
+   
+   <script src='sched.js'></script>
 
+  
+     
+  </div>
+</div>
 
-function tbase10(h,m,ampm){// time to base 10
- h=h+to24(ampm);
- return h+m/60;
-
-}    
-
-
-   var dT=tbase10(fh,fm,fampm)-tbase10(ih,im,iampm)// diff in og time
-   var intervals=dT/(brks+1);// is og breaks in dec time
-
-tbase10(10, 3,'AM')
-
-
-var i;// will run it on brks
-var timekeep=[];// make array to start keeping Time
-timekeep[0]=tbase10(ih,im,iampm);// store first
-for (i =0; i < 1+brks; i++) { // for arry of base 10 time
-    if (i==0) {continue;}
-    timekeep[i]=timekeep[i-1]+intervals;
-}
-
-function toAMPM(t){
-    var h, m, ampm ;
-    h=Math.floor(t);// get hours 
-    
-
-
-    m=Math.round((t-h)*60);// get min in dec
-    
-    if(h>12) // am pm check
-      {h=h-12;
-       ampm='PM'; }
-    else { ampm='AM';}
-
-
-    return [h,m,ampm];
-    }
-
-
-        
-
-
-
-var timeobj=[];// store array here
-for (i =1; i < 1+brks; i++) { // for arry of ampm time
-timeobj[i]=toAMPM(timekeep[i]) + "<br />";
-
-}
-
-
-
-function to12(t){
-    var h, m ;
-    h=Math.floor(t);// get hours 
-    
-
-
-    m=Math.round((t-h)*60);// get min in dec
-    
-    
-
-    return [h,m];
-    }
-
-
-
-
-
-// below in dT i need to learn array splice like python
-document.getElementById("demo").innerHTML = 
-'difference in time: ' + to12 (dT) +"<br />"
-+ 'time interval: ' + to12 (intervals) + "<br />"+ timeobj
-
-;}
+   
+  
+  
+</body>
+</html>
